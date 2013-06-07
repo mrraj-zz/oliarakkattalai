@@ -3,6 +3,13 @@
   <%= f.input :description %>
   <%= f.input :place %>
   <%= f.input :date %>
+  <div id="picture_scroll">
+    <%= f.fields_for :pictures do |picture| %>
+      <%= render "picture_fields", { f: picture } %>
+    <% end %>
+
+    <%= link_to_add_fields("+ Add Pictures", f, :pictures) %>
+  </div>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

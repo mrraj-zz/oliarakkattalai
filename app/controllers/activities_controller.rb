@@ -6,5 +6,9 @@ class ActivitiesController < ApplicationController
 
   def new
     @activity = Activity.new
+    @picture  = @activity.pictures.build
+  end
+
+  def create
   end
 end
