@@ -1,0 +1,29 @@
+<div class="row">
+  <h4>Upload Pictures For An Activity <%= @activity.title.titleize %></h4>
+  <div class="span4 offset4">
+    <%= form_for [@activity, @picture], remote: true do |f| %>
+      <%= f.label :picture %>
+      <%= f.file_field :picture %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <ul id="upload_images"></ul>
+</div>
+
+<%= content_for :javascript_render_from_views do %>
+  <script type="text/javascript">
+    $(function(){
+      $("#picture_picture").fileupload({
+        dataType: 'json',
+        url:      '<%= activity_pictures_path(@activity) %>',
+        done:     function(e, data) {
+                    $.each(data.result, function(index, file) {
+                      $('<li class="pull-left"><img src="'+file.url+'"></li>').appendTo("#upload_images");
+                    });
+                  }
+      });
+    });
+  </script>
+<% end %>

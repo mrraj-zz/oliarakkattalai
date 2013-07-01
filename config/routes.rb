@@ -1,8 +1,14 @@
 Oliarakkattalai::Application.routes.draw do
-  devise_for :users
   root to: 'homes#index'
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
-  resources :activities
+  devise_for :users
+  ActiveAdmin.routes(self)
+
+  resources :activities do
+    resources :pictures
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

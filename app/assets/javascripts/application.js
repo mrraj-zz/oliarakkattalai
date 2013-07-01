@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require jquery.fileupload
+//= require bootstrap/load-image.min
+//= require bootstrap/image-gallery.min
 //= require_tree .
