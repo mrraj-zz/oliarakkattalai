@@ -6,8 +6,6 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem 'bootstrap-addons-rails'
 
 group :development do
   gem 'mysql2'
@@ -15,6 +13,8 @@ end
 
 group :production do
   gem 'pg'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+  gem 'bootstrap-addons-rails'
 end
 
 gem 'devise'
