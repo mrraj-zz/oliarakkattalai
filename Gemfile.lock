@@ -50,6 +50,7 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    addressable (2.3.5)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
@@ -77,12 +78,21 @@ GEM
       railties (~> 3.1)
       warden (~> 1.2.1)
     erubis (2.7.0)
+    excon (0.25.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     has_scope (0.5.1)
+    heroku (2.39.4)
+      heroku-api (~> 0.3.7)
+      launchy (>= 0.3.2)
+      netrc (~> 0.7.7)
+      rest-client (~> 1.6.1)
+      rubyzip
+    heroku-api (0.3.13)
+      excon (~> 0.25.0)
     hike (1.2.3)
     i18n (0.6.1)
     inherited_resources (1.4.0)
@@ -105,6 +115,8 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.3.0)
+      addressable (~> 2.3)
     less (2.3.2)
       commonjs (~> 0.2.6)
     less-rails (2.3.3)
@@ -122,7 +134,9 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     mysql2 (0.3.11)
+    netrc (0.7.7)
     orm_adapter (0.4.0)
+    pg (0.15.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -154,7 +168,10 @@ GEM
     ref (1.0.5)
     responders (0.9.3)
       railties (~> 3.1)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rmagick (2.13.2)
+    rubyzip (0.9.9)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -193,11 +210,13 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   devise
+  heroku
   jbuilder
   jquery-rails (< 3.0.0)
   jquery.fileupload-rails
   less-rails
   mysql2
+  pg
   rails (= 3.2.13)
   rmagick
   sass-rails (~> 3.2.3)

@@ -1,11 +1,20 @@
 source 'https://rubygems.org'
 
+ruby '1.9.2'
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+group :development do
+  gem 'mysql2'
+end
+
+group :production do
+  gem 'pg'
+end
+
 gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
@@ -14,6 +23,7 @@ gem 'jquery.fileupload-rails'
 gem 'jbuilder'
 gem 'will_paginate'
 gem 'activeadmin'
+gem 'heroku'
 
 
 # Gems used only for assets and not required
