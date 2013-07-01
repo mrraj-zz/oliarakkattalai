@@ -1,10 +1,9 @@
 Oliarakkattalai::Application.routes.draw do
   root to: 'homes#index'
-  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
-  ActiveAdmin.routes(self)
 
   resources :activities do
     resources :pictures
